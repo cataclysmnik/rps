@@ -7,22 +7,40 @@ function getComputerChoice() {
     choice = "";
     console.log(n)
     if (n < 0.3333) {
-        choice = "Rock";
+        choice = "rock";
     }
     else if (n >= 0.3333 && n <= 0.6666) {
-        choice = "Paper";
+        choice = "paper";
     }
     else {
-        choice = "Scissor";
+        choice = "scissors";
     }
-    console.log(choice)
+    return choice;
 }
 
 function getHumanChoice() {
-    input = prompt("Rock, Paper or Scissor?")
-    input = input.toLowerCase()
-    console.log(input)
+    input = prompt("Rock, Paper or Scissor?");
+    input = input.toLowerCase();
+    return input;
 }
 
-getComputerChoice()
-getHumanChoice()
+function playRound() {
+    let computerChoice = getComputerChoice();
+    let humanChoice = getHumanChoice();
+    if((computerChoice === "rock" && humanChoice === "paper") || (computerChoice === "paper" && humanChoice === "scissors") || (computerChoice === "scissors" && humanChoice === "rock")) {
+        message = `You win, ${humanChoice} beats ${computerChoice}.`;
+        console.log(message);
+        humanScore++;
+        console.log(humanScore)
+    }
+    else if((humanChoice === "rock" && computerChoice === "paper") || (humanChoice === "paper" && computerChoice === "scissors") || (humanChoice === "scissors" && computerChoice === "rock")) {
+        message = `You lose, ${computerChoice} beats ${humanChoice}.`;
+        console.log(message);
+        computerScore++;
+    }
+    else {
+        console.log("Draw!");
+    }
+}
+
+playRound()
