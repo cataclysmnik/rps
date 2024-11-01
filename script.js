@@ -15,4 +15,11 @@ function getComputerChoice() {
     console.log(choice)
 }
 
+function getHumanChoice() {
+    input = prompt("Rock, Paper or Scissor?")
+    input = input.toLowerCase()
+    console.log(input)
+}
+
 getComputerChoice()
+getHumanChoice()
