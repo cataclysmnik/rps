@@ -31,12 +31,16 @@ function playGame() {
     function playRound() {
         let computerChoice = getComputerChoice();
         let humanChoice = getHumanChoice();
-        if((computerChoice === "rock" && humanChoice === "paper") || (computerChoice === "paper" && humanChoice === "scissors") || (computerChoice === "scissors" && humanChoice === "rock")) {
+        if((computerChoice === "rock" && humanChoice === "paper") || 
+            (computerChoice === "paper" && humanChoice === "scissors") || 
+                (computerChoice === "scissors" && humanChoice === "rock")) {
             message = `You win, ${humanChoice} beats ${computerChoice}.`;
             console.log(message);
             humanScore++;
         }
-        else if((humanChoice === "rock" && computerChoice === "paper") || (humanChoice === "paper" && computerChoice === "scissors") || (humanChoice === "scissors" && computerChoice === "rock")) {
+        else if((humanChoice === "rock" && computerChoice === "paper") || 
+                (humanChoice === "paper" && computerChoice === "scissors") || 
+                    (humanChoice === "scissors" && computerChoice === "rock")) {
             message = `You lose, ${computerChoice} beats ${humanChoice}.`;
             console.log(message);
             computerScore++;
